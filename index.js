@@ -2,7 +2,14 @@ module.exports = {
     presets: [
         '@babel/preset-typescript',
         '@babel/preset-react',
-        '@babel/preset-env',
+        [
+            '@babel/preset-env',
+            {
+                // https://babeljs.io/docs/en/babel-preset-env
+                corejs: '3.22.5',
+                useBuiltIns: 'entry',
+            },
+        ],
         'mobx',
     ],
     plugins: [
